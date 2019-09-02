@@ -10,6 +10,8 @@ begin
 			usuario varchar(max), 
 			nombre_usuario varchar(max),
 			contrasena varbinary(max),
+			correo varchar(max),
+			tel_celular varchar(max),
 			id_tipo_usuario int,
 			id_de_sucursal int,
 			fecha_alta datetime
