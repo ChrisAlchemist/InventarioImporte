@@ -1,4 +1,5 @@
 use ImporteInventario
+go
 
 IF NOT EXISTS (SELECT * FROM sysobjects WHERE type = 'U' AND name = 'tbl_banca_usuarios')
 begin
