@@ -12,113 +12,118 @@
     <link href="~/Estilos/css/bootstrap.min.css" rel="stylesheet" />
     <link href="~/Estilos/css/login.css" rel="stylesheet" />
     <link rel="icon" type="image/x-icon" href="~/Estilos/Imagenes/favicon.ico" />
-    <link href="~/Estilos/EstiloLogin.css" rel="stylesheet" />
+    <!--<link href="~/Estilos/EstiloLogin.css" rel="stylesheet" />-->
+
+
+    <link rel="icon" type="image/png" href="~/Imagenes/icons/favicon.ico" />
+
+    <!--===============================================================================================-->
+    <!--<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">-->
+    <!--===============================================================================================-->
+    <!--<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">-->
+    <link href="~/fonts/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <!--===============================================================================================-->
+    <!--<link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">-->
+    <link href="~/fonts/Linearicons-Free-v1.0.0/icon-font.min.css" rel="stylesheet" />
+    <!--===============================================================================================-->
+    <!--<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">-->
+    <link href="~/Vendor/animate/animate.css" rel="stylesheet" />
+    <!--===============================================================================================-->
+    <!--<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">-->
+    <link href="~/Vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" />
+    <!--===============================================================================================-->
+    <!--<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">-->
+    <link href="~/Vendor/animsition/css/animsition.min.css" rel="stylesheet" />
+    <!--===============================================================================================-->
+    <!--<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">-->
+    <link href="~/Vendor/select2/select2.min.css" rel="stylesheet" />
+    <!--===============================================================================================-->
+    <!--<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">-->
+    <link href="~/Vendor/daterangepicker/daterangepicker.css" rel="stylesheet" />
+    <!--===============================================================================================-->
+    <!--<link rel="stylesheet" type="text/css" href="css/util.css">-->
+    <!--<link rel="stylesheet" type="text/css" href="css/main.css">-->
+    <link href="~/Estilos/EstilosLogin/main.css" rel="stylesheet" />
+    <link href="~/Estilos/EstilosLogin/util.css" rel="stylesheet" />
+
+
 </head>
 <body>
     <div class="container">
         <div class="card card-container">
-            <img id="profile-img" class="profile-img-card" src="~/Estilos/Imagenes/avatar_2x.png" />
-            <p id="profile-name" class="profile-name-card"></p>
-            @using (Html.BeginForm("ValidaLogin", "Login", new { @class = "form-signin" }))
-            {
-                <body>
-                    <div class="area"></div><nav class="main-menu">
-                        <ul>
-                            <li>
-                                <a href="http://justinfarrow.com">
-                                    <i class="fa fa-home fa-2x"></i>
-                                    <span class="nav-text">
-                                        Dashboard
-                                    </span>
-                                </a>
 
-                            </li>
-                            <li class="has-subnav">
-                                <a href="#">
-                                    <i class="fa fa-laptop fa-2x"></i>
-                                    <span class="nav-text">
-                                        Stars Components
-                                    </span>
-                                </a>
 
-                            </li>
-                            <li class="has-subnav">
-                                <a href="#">
-                                    <i class="fa fa-list fa-2x"></i>
-                                    <span class="nav-text">
-                                        Forms
-                                    </span>
-                                </a>
+            <body>
 
-                            </li>
-                            <li class="has-subnav">
-                                <a href="#">
-                                    <i class="fa fa-folder-open fa-2x"></i>
-                                    <span class="nav-text">
-                                        Pages
-                                    </span>
-                                </a>
+                <div class="limiter">
+                    <div class="container-login100" style="background-image: url(' /Imagenes/bg-01.jpg');">
+                        <div class="wrap-login100 p-t-30 p-b-50">
+                            <span class="login100-form-title p-b-41">
+                                Iniciar Sesión
+                                
+                            </span>
+                            <form class="login100-form validate-form p-b-33 p-t-5">
 
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-bar-chart-o fa-2x"></i>
-                                    <span class="nav-text">
-                                        Graphs and Statistics
-                                    </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-font fa-2x"></i>
-                                    <span class="nav-text">
-                                        Quotes
-                                    </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-table fa-2x"></i>
-                                    <span class="nav-text">
-                                        Tables
-                                    </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-map-marker fa-2x"></i>
-                                    <span class="nav-text">
-                                        Maps
-                                    </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-info fa-2x"></i>
-                                    <span class="nav-text">
-                                        Documentation
-                                    </span>
-                                </a>
-                            </li>
-                        </ul>
+                                <div class="wrap-input100 validate-input" data-validate="Introduce un usuario">
+                                    <input class="input100" type="text" name="username" placeholder="Usuario">
+                                    <span class="focus-input100" data-placeholder="&#xe82a;"></span>
+                                </div>
 
-                        <ul class="logout">
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-power-off fa-2x"></i>
-                                    <span class="nav-text">
-                                        Logout
-                                    </span>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                </body>
-            }
+                                <div class="wrap-input100 validate-input" data-validate="Introduce un número de usuario">
+                                    <input class="input100" type="text" name="username" placeholder="Número de usuario">
+                                    <span class="focus-input100" data-placeholder="&#xe837;" ></span>
+                                </div>
+
+                                <div class="wrap-input100 validate-input" data-validate="Introduce una contraseña correcta">
+                                    <input class="input100" type="password" name="pass" placeholder="Contraseña">
+                                    <span class="focus-input100" data-placeholder="&#xe80f;"></span>
+                                </div>
+
+                                <div class="container-login100-form-btn m-t-32">
+                                    <button class="login100-form-btn">
+                                        Login
+                                    </button>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div id="dropDownSelect1"></div>
+
+            </body>
         </div>
     </div>
 
-    <script src="~/Estilos/js/jquery.min.js"></script>
-    <script src="~/Estilos/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    <!--<script src="vendor/jquery/jquery-3.2.1.min.js"></script>-->
+    <script src="~/Vendor/jquery/jquery-3.2.1.min.js"></script>
+    <!--===============================================================================================-->
+    <!--<script src="vendor/animsition/js/animsition.min.js"></script>-->
+    <script src="~/Vendor/animsition/js/animsition.js"></script>
+    <!--===============================================================================================-->
+    <!--<script src="vendor/bootstrap/js/popper.js"></script>-->
+    <script src="~/Vendor/bootstrap/js/popper.js"></script>
+    <!--<script src="vendor/bootstrap/js/bootstrap.min.js"></script>-->
+    <!--===============================================================================================-->
+    <!--<script src="vendor/select2/select2.min.js"></script>-->
+    <script src="~/Vendor/select2/select2.min.js"></script>
+    <!--===============================================================================================-->
+    <!--<script src="vendor/daterangepicker/moment.min.js"></script>-->
+    <script src="~/Vendor/daterangepicker/moment.min.js"></script>
+
+    <!--<script src="vendor/daterangepicker/daterangepicker.js"></script>-->
+    <script src="~/Vendor/daterangepicker/daterangepicker.js"></script>
+    <!--===============================================================================================-->
+    <!--<script src="vendor/countdowntime/countdowntime.js"></script>-->
+    <script src="~/Vendor/countdowntime/countdowntime.js"></script>
+    <!--===============================================================================================-->
+    <!--<script src="js/main.js"></script>-->
+    <script src="~/JS/main.js"></script>
+
+    <!--<script src="~/Estilos/js/jquery.min.js"></script>-->
+    <!---<script src="~/Estilos/js/bootstrap.min.js"></script>-->
 </body>
 
