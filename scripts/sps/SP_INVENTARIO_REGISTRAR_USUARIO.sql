@@ -16,13 +16,13 @@ Ticket			ticket
 
 */
 
-if exists (select * from sysobjects where name like 'SP_BANCA_REGISTRAR_USUARIO' and xtype = 'p')
-	drop proc SP_BANCA_REGISTRAR_USUARIO
+if exists (select * from sysobjects where name like 'SP_INVENTARIO_REGISTRAR_USUARIO' and xtype = 'p')
+	drop proc SP_INVENTARIO_REGISTRAR_USUARIO
 go
 
 create proc
 
-	[dbo].[SP_BANCA_REGISTRAR_USUARIO]
+	[dbo].[SP_INVENTARIO_REGISTRAR_USUARIO]
 	
 		-- parametros		
 		--num_usuario, 
@@ -64,7 +64,7 @@ as
 				select 
 					1 
 				from 
-					tbl_banca_usuarios 
+					TBL_IMPORTES_USUARIOS 
 				where 
 					nombre_usuario = @nombreUsuario 
 				and 
@@ -73,19 +73,19 @@ as
 					tel_celular = @telCelular
 			)
 			BEGIN
-				 SELECT @numeroUsuario= MAX(num_usuario) + 1 FROM TBL_BANCA_USUARIOS
+				 SELECT @numeroUsuario= MAX(num_usuario) + 1 FROM TBL_IMPORTES_USUARIOS
 				
 				if(@idTipoUsuario = 2)
 					begin
-						select @usuario = CONCAT('ADMIN_', @idDeSucursal, '_', @numeroUsuario)
+						select @usuario = CONCAT('AGEN_', @idDeSucursal, '_', @numeroUsuario)
 					end
 				else if(@idTipoUsuario = 3)
 					begin
-						select @usuario = CONCAT('AGEN_', @idDeSucursal, '_', @numeroUsuario)
+						select @usuario = CONCAT('ADMIN_', @idDeSucursal, '_', @numeroUsuario)
 					end
 
 
-				INSERT INTO TBL_BANCA_USUARIOS 
+				INSERT INTO TBL_IMPORTES_USUARIOS 
 				(
 					num_usuario, 
 					usuario, 
@@ -102,7 +102,7 @@ as
 					@numeroUsuario,
 					@usuario,
 					@nombreUsuario,
-				 	ImporteInventario.dbo.FN_BANCA_CIFRAR_CONTRASENA(@contrasena),
+				 	ImporteInventario.dbo.FN_INVENTARIO_CIFRAR_CONTRASENA(@contrasena),
 					@correo,
 					@telCelular,
 					@idTipoUsuario,
@@ -115,7 +115,7 @@ as
 					@estatus ESTATUS, 
 					*
 				from 
-					tbl_banca_usuarios 
+					TBL_IMPORTES_USUARIOS 
 					where num_usuario = @numeroUsuario
 			
 				END
@@ -165,5 +165,5 @@ as
 	end -- procedimiento
 	go
 
-	grant exec on SP_BANCA_REGISTRAR_USUARIO to public
+	grant exec on SP_INVENTARIO_REGISTRAR_USUARIO to public
 	go

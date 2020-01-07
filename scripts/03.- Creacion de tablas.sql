@@ -1,32 +1,32 @@
 use ImporteInventario
 go
 
-IF NOT EXISTS (SELECT * FROM sysobjects WHERE type = 'U' AND name = 'tbl_banca_usuarios')
+IF NOT EXISTS (SELECT * FROM sysobjects WHERE type = 'U' AND name = 'TBL_IMPORTES_USUARIOS')
 begin
 	create table 
-		tbl_banca_usuarios 
+		TBL_IMPORTES_USUARIOS
 		(
-			id_usuario int IDENTITY, 
-			num_usuario int, 
-			usuario varchar(max), 
-			nombre_usuario varchar(max),
-			contrasena varbinary(max),
-			correo varchar(max),
-			tel_celular varchar(max),
-			id_tipo_usuario int,
-			id_de_sucursal int,
-			fecha_alta datetime
+			ID_USUARIO int IDENTITY, 
+			NUM_USUARIO int, 
+			USUARIO varchar(max), 
+			NOMBRE_USUARIO varchar(max),
+			CONTRASENA varbinary(max),
+			CORREO varchar(max),
+			TEL_CELULAR varchar(max),
+			ID_TIPO_USUARIO int,
+			ID_DE_SUCURSAL int,
+			FECHA_ALTA datetime
 		)
 end
 go
 
-IF NOT EXISTS (SELECT * FROM sysobjects WHERE type = 'U' AND name = 'cat_banca_tipos_usuario')
+IF NOT EXISTS (SELECT * FROM sysobjects WHERE type = 'U' AND name = 'CAT_INVENTARIO_TIPOS_USUARIOS')
 begin
 	create table 
-		cat_banca_tipos_usuario
+		CAT_INVENTARIO_TIPOS_USUARIOS
 		(
-			id_tipo_usuario int IDENTITY,
-			descripcion varchar(max)
+			ID_TIPO_USUARIO int IDENTITY,
+			DESCRIPCION varchar(max)
 		)
 end
 
