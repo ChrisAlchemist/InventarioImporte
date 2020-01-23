@@ -93,7 +93,9 @@ as
 			end
 			else
 			begin
-				select 				
+				select
+					@estatus ESTATUS,
+					@mensaje MENSAJE,
 					NUM_USUARIO,
 					USUARIO,
 					NOMBRE_USUARIO,
