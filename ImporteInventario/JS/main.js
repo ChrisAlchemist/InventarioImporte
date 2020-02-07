@@ -31,6 +31,30 @@
             }
         }
 
+        if (check) {
+            var datosUsuario = {};            
+
+            datosUsuario.numUsuario = $("#usuario").val();
+            datosUsuario.usuario = $("#numero_usuario").val();
+            datosUsuario.contrasena = $("#password").val();
+            
+
+            $.ajax({
+                method: "POST",
+                url: rootUrl("/Sesion/ValidaUsuario"),
+                data: { usuario: datosUsuario },
+                dataType: "json",
+                success: function (data) {
+                    
+                    alert("" + data.mensaje);
+                    
+                },
+                error: function (xhr, status, error) {
+                    alert(error);
+                },
+            });
+        }
+
         return check;
     });
 

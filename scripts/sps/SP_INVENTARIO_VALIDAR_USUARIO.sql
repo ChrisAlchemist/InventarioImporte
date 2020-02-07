@@ -50,13 +50,12 @@ as
 					
 			end -- inicio
 			
-			if exists (select * from TBL_IMPORTES_USUARIOS where USUARIO = @usuario and NUM_USUARIO = @numUsuario and ImporteInventario.dbo.FN_INVENTARIO_DESCIFRAR_CONTRASENA (CONTRASENA) = @contrasena)
+			if exists (select 1 from TBL_IMPORTES_USUARIOS where USUARIO = @usuario and NUM_USUARIO = @numUsuario and ImporteInventario.dbo.FN_INVENTARIO_DESCIFRAR_CONTRASENA (CONTRASENA) = @contrasena)
 			begin
 				select @estatus = 200, @mensaje = 'Los datos de inicio de sesión son correctos'
 			end
 			else
 			begin
-
 				select @estatus = -1, @error_message = 'Alguno de los datos ingresados es incorrecto'
 			end
 			

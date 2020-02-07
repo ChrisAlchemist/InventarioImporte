@@ -15,7 +15,7 @@ namespace ImporteInventario.Controllers
             Usuario usuario = new Usuario();
             usuario.numUsuario = 4001;
             usuario.usuario = "INV_SA";
-            usuario.contrasena = "SBS_ADMIN_5";
+            usuario.contrasena = "SBS_ADMIN_54";
             Funciones.Funciones funciones = new Funciones.Funciones();
             funciones.ObtenerUsuario(usuario);
             return View();
@@ -44,6 +44,28 @@ namespace ImporteInventario.Controllers
             {
 
                 throw;
+            }
+        }
+        [HttpPost]
+        public ActionResult ValidaUsuario(Usuario usuario)
+        {
+            try
+            {
+                Funciones.Funciones funciones = new Funciones.Funciones();
+                usuario = funciones.ObtenerUsuario(usuario);
+                if (usuario.estatus == 200)
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+                else
+                {
+                    return Json(new { estatus = usuario.estatus, mensaje = usuario.mensaje }, JsonRequestBehavior.AllowGet);
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                return new HttpStatusCodeResult(500, ex.Message);
             }
         }
     }

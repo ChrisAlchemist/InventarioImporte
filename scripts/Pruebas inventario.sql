@@ -1,0 +1,6 @@
+use ImporteInventario
+go
+
+select ImporteInventario.dbo.FN_INVENTARIO_DESCIFRAR_CONTRASENA(CONTRASENA), * from TBL_IMPORTES_USUARIOS where NUM_USUARIO = 4001
+exec SP_INVENTARIO_VALIDAR_USUARIO 4001, 'inv_sa', 'SBS_ADMIN_54'
+

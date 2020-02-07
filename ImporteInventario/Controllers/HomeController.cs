@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ImporteInventario.Funciones.Entidades;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,7 +11,23 @@ namespace ImporteInventario.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            /*
+            Usuario usuario = new Usuario();
+            usuario.numUsuario = 4001;
+            usuario.usuario = "INV_SA";
+            usuario.contrasena = "SBS_ADMIN_5";
+            Funciones.Funciones funciones = new Funciones.Funciones();
+            usuario = funciones.ObtenerUsuario(usuario);
+            if(usuario.estatus == 200)
+            {*/
+                return View();
+            /*}
+            else
+            {
+                
+                return RedirectToAction("Login", "Sesion");
+            }*/
+            
         }
 
         public ActionResult About()
